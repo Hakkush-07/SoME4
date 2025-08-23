@@ -3,3 +3,4 @@ venv/
 media/
 depo/
 .DS_Store
+.env
