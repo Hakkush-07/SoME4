@@ -15,22 +15,8 @@ class Some4(Scene):
         # settings
         Line.set_default(stroke_width=0.9)
 
-        # pascal
-        self.wait(3) # introduction talk
-        pascal_text = Text("Pascal's Theorem", font_size=60)
-        self.play(Write(pascal_text), run_time=2)
-        self.wait(2)
-        latin_text = Text("hexagrammum mysticum", font_size=24, slant=ITALIC, color=BLUE).shift(DOWN * 1)
-        self.play(FadeIn(latin_text))
-        self.wait()
-        eng_text = Text("mystical hexagon", font_size=24, slant=ITALIC, color=GREEN).shift(DOWN * 1.5)
-        self.play(FadeIn(eng_text))
-        self.wait()
-        self.play(FadeOut(pascal_text), FadeOut(latin_text), FadeOut(eng_text))
-        self.wait(2)
-
-
         # pascal diagram
+        self.wait()
         pascal = VGroup()
         radius = 2.0
         unitcircle = Circle(radius=radius, color=WHITE, stroke_width=1.1)
@@ -69,7 +55,7 @@ class Some4(Scene):
         self.add(abcdefx)
         self.play(Create(ax), Create(ex), abcdefx.animate.shift(4.0 * DOWN))
         x_text = MathTex(r"X=AB\cap DE \leftarrow").scale(0.5).move_to(abcdefx, LEFT).shift(2 * LEFT)
-        self.play(Create(X), Create(x_label), Write(x_text), abcdefx[0:2].animate.set_fill(color=PURE_BLUE), abcdefx[3:5].animate.set_fill(color=PURE_BLUE))
+        self.play(Create(X), Create(x_label), Write(x_text), abcdefx[0:2].animate.set_fill(color=PURE_BLUE), abcdefx[3:5].animate.set_fill(color=PURE_GREEN))
         self.wait(2)
         pascal.add(X, x_label, ax, ex)
         pascal_tex.add(abcdefx, x_text)
@@ -83,7 +69,7 @@ class Some4(Scene):
         self.add(abcdefy)
         self.play(Create(by), Create(fy), abcdefy.animate.shift(4.5 * DOWN))
         y_text = MathTex(r"Y=BC\cap EF \leftarrow").scale(0.5).move_to(abcdefy, LEFT).shift(2 * LEFT)
-        self.play(Create(Y), Create(y_label), Write(y_text), abcdefy[1:3].animate.set_fill(color=PURE_BLUE), abcdefy[4:6].animate.set_fill(color=PURE_BLUE))
+        self.play(Create(Y), Create(y_label), Write(y_text), abcdefy[1:3].animate.set_fill(color=PURE_BLUE), abcdefy[4:6].animate.set_fill(color=PURE_GREEN))
         self.wait(2)
         pascal.add(Y, y_label, by, fy)
         pascal_tex.add(abcdefy, y_text)
@@ -97,7 +83,7 @@ class Some4(Scene):
         self.add(abcdefz)
         self.play(Create(dz), Create(fz), abcdefz.animate.shift(5.0 * DOWN))
         z_text = MathTex(r"Z=CD\cap FA \leftarrow").scale(0.5).move_to(abcdefz, LEFT).shift(2 * LEFT)
-        self.play(Create(Z), Create(z_label), Write(z_text), abcdefz[0].animate.set_fill(color=PURE_BLUE), abcdefz[2:4].animate.set_fill(color=PURE_BLUE), abcdefz[5].animate.set_fill(color=PURE_BLUE))
+        self.play(Create(Z), Create(z_label), Write(z_text), abcdefz[0].animate.set_fill(color=PURE_GREEN), abcdefz[2:4].animate.set_fill(color=PURE_BLUE), abcdefz[5].animate.set_fill(color=PURE_GREEN))
         self.wait(2)
         pascal.add(Z, z_label, dz, fz)
         pascal_tex.add(abcdefz, z_text)
@@ -155,7 +141,7 @@ class Some4(Scene):
         self.add(abcdefx)
         self.play(Create(ab), Create(de), abcdefx.animate.shift(4.0 * DOWN))
         x_text = MathTex(r"X=AB\cap DE \leftarrow").scale(0.5).move_to(abcdefx, LEFT).shift(2 * LEFT)
-        self.play(Create(X), Create(x_label), Write(x_text), abcdefx[0:2].animate.set_fill(color=PURE_BLUE), abcdefx[3:5].animate.set_fill(color=PURE_BLUE))
+        self.play(Create(X), Create(x_label), Write(x_text), abcdefx[0:2].animate.set_fill(color=PURE_BLUE), abcdefx[3:5].animate.set_fill(color=PURE_GREEN))
         self.wait(2)
         pascal.add(X, x_label, ab, de)
         pascal_tex.add(abcdefx, x_text)
@@ -169,7 +155,7 @@ class Some4(Scene):
         self.add(abcdefy)
         self.play(Create(bc), Create(ef), abcdefy.animate.shift(4.5 * DOWN))
         y_text = MathTex(r"Y=BC\cap EF \leftarrow").scale(0.5).move_to(abcdefy, LEFT).shift(2 * LEFT)
-        self.play(Create(Y), Create(y_label), Write(y_text), abcdefy[1:3].animate.set_fill(color=PURE_BLUE), abcdefy[4:6].animate.set_fill(color=PURE_BLUE))
+        self.play(Create(Y), Create(y_label), Write(y_text), abcdefy[1:3].animate.set_fill(color=PURE_BLUE), abcdefy[4:6].animate.set_fill(color=PURE_GREEN))
         self.wait(2)
         pascal.add(Y, y_label, bc, ef)
         pascal_tex.add(abcdefy, y_text)
@@ -183,7 +169,7 @@ class Some4(Scene):
         self.add(abcdefz)
         self.play(Create(cd), Create(fa), abcdefz.animate.shift(5.0 * DOWN))
         z_text = MathTex(r"Z=CD\cap FA \leftarrow").scale(0.5).move_to(abcdefz, LEFT).shift(2 * LEFT)
-        self.play(Create(Z), Create(z_label), Write(z_text), abcdefz[0].animate.set_fill(color=PURE_BLUE), abcdefz[2:4].animate.set_fill(color=PURE_BLUE), abcdefz[5].animate.set_fill(color=PURE_BLUE))
+        self.play(Create(Z), Create(z_label), Write(z_text), abcdefz[0].animate.set_fill(color=PURE_GREEN), abcdefz[2:4].animate.set_fill(color=PURE_BLUE), abcdefz[5].animate.set_fill(color=PURE_GREEN))
         self.wait(2)
         pascal.add(Z, z_label, cd, fa)
         pascal_tex.add(abcdefz, z_text)
@@ -203,6 +189,21 @@ class Some4(Scene):
         ]
 
         self.play(AnimationGroup(animations_out), FadeOut(pascal_tex, shift=RIGHT), FadeOut(abcdef, shift=UP), run_time=2.0)
+        self.wait(2)
+
+
+        # pascal
+        self.wait(3)
+        pascal_text = Text("Pascal's Theorem", font_size=60)
+        self.play(Write(pascal_text), run_time=2)
+        self.wait(2)
+        latin_text = Text("hexagrammum mysticum", font_size=24, slant=ITALIC, color=BLUE).shift(DOWN * 1)
+        self.play(FadeIn(latin_text))
+        self.wait()
+        eng_text = Text("mystical hexagram", font_size=24, slant=ITALIC, color=GREEN).shift(DOWN * 1.5)
+        self.play(FadeIn(eng_text))
+        self.wait()
+        self.play(FadeOut(pascal_text), FadeOut(latin_text), FadeOut(eng_text))
         self.wait(2)
 
 
@@ -290,16 +291,20 @@ class Some4(Scene):
 
 
         # curves
-        title = Tex(r"What is a curve?", font_size=48)
+        title = Tex(r"What is an algebraic curve?", font_size=48)
         self.play(Write(title), run_time=2)
         self.wait(2)
         self.play(title.animate.shift(UP))
 
-        curve = Tex(r"$\{(x,y):P(x,y)=0\}$", font_size=30)
+        curve = Tex(r"$\mathcal{C}=\{(x,y):P(x,y)=0\}$", font_size=30)
         self.play(Write(curve), run_time=2)
         self.wait(2)
         self.play(title.animate.shift(UP), curve.animate.shift(UP))
-        # say degree of curve is degree of polynomial P(x, y)
+
+        degree = Tex(r"$\deg(\mathcal{C})=\deg(P)=\max(i+j:P(x,y)=\cdots+c_{i,j}x^iy^j+\cdots,\;c_{i,j}\neq 0)$", font_size=30)
+        self.play(Write(degree), run_time=2)
+        self.wait(2)
+        self.play(title.animate.shift(UP), curve.animate.shift(UP), degree.animate.shift(UP))
 
         number_plane = NumberPlane(
             background_line_style={
@@ -318,7 +323,7 @@ class Some4(Scene):
         elliptic_graph = ImplicitFunction(lambda x, y: y * y - x ** 3 - 3, color=YELLOW)
         self.play(Write(elliptic), run_time=2)
         self.wait(2)
-        self.play(elliptic_group.animate.shift(2 * UP + 3 * LEFT), FadeOut(title, shift=RIGHT), FadeOut(curve, shift=RIGHT))
+        self.play(elliptic_group.animate.shift(2 * UP + 3 * LEFT), FadeOut(title, shift=RIGHT), FadeOut(curve, shift=RIGHT), FadeOut(degree, shift=RIGHT))
         self.wait(2)
         self.play(Create(elliptic_graph))
         self.play(FadeIn(number_plane))
@@ -437,7 +442,45 @@ class Some4(Scene):
         self.play(FocusOn(p1), FocusOn(p2), FocusOn(p3), FocusOn(p4), FocusOn(p5), FocusOn(p6))
         self.wait()
 
-        self.play(FadeOut(elliptic_group, shift=LEFT), FadeOut(circle_group, shift=LEFT), FadeOut(elliptic_graph), FadeOut(circle_graph), FadeOut(p1), FadeOut(p2), FadeOut(p3), FadeOut(p4), FadeOut(p5), FadeOut(p6), FadeOut(number_plane))
+        self.play(FadeOut(elliptic_group, shift=LEFT), FadeOut(circle_group, shift=LEFT), FadeOut(elliptic_graph), FadeOut(circle_graph), FadeOut(p1), FadeOut(p2), FadeOut(p3), FadeOut(p4), FadeOut(p5), FadeOut(p6), ) # FadeOut(number_plane)
+
+
+        a = Tex(r"$P(x,y)=y-3x^3+3x$", font_size=30, color=YELLOW).shift(2 * UP + 3.6 * LEFT)
+        a_group = VGroup()
+        a_box = Rectangle(fill_color=BLACK, fill_opacity=1.0)
+        a_box.surround(a)
+        a_box = Rectangle(height=a_box.height / 2, width=a_box.width, fill_color=BLACK, fill_opacity=1.0).move_to(a.get_center())
+        a_group.add(a_box, a)
+        a_graph = ImplicitFunction(lambda x, y: y - 3 * (x ** 3) + 3 * x, color=YELLOW)
+        self.play(FadeIn(a_group, shift=RIGHT), FadeIn(a_graph))
+        self.wait()
+
+        b = Tex(r"$Q(x,y)=x-3y^3+3y$", font_size=30, color=BLUE).shift(0.4 * UP + 3.6 * LEFT)
+        b_group = VGroup()
+        b_box = Rectangle(fill_color=BLACK, fill_opacity=1.0)
+        b_box.surround(b)
+        b_box = Rectangle(height=b_box.height / 2, width=b_box.width, fill_color=BLACK, fill_opacity=1.0).move_to(b.get_center())
+        b_group.add(b_box, b)
+        b_graph = ImplicitFunction(lambda x, y: x - 3 * (y ** 3) + 3 * y, color=BLUE)
+        self.play(FadeIn(b_group, shift=RIGHT), FadeIn(b_graph))
+        self.wait()
+
+        p1 = Dot([-0.816, 0.816, 0], radius=0.1)
+        p2 = Dot([-0.357, 0.934, 0], radius=0.1)
+        p3 = Dot([1.155, 1.155, 0], radius=0.1)
+        p4 = Dot([-0.934, 0.357, 0], radius=0.1)
+        p5 = Dot([0, 0, 0], radius=0.1)
+        p6 = Dot([0.934, -0.357, 0], radius=0.1)
+        p7 = Dot([-1.155, -1.155, 0], radius=0.1)
+        p8 = Dot([0.357, -0.934, 0], radius=0.1)
+        p9 = Dot([0.816, -0.816, 0], radius=0.1)
+        self.play(Create(p1), Create(p2), Create(p3), Create(p4), Create(p5), Create(p6), Create(p7), Create(p8), Create(p9))
+        self.wait()
+        self.play(FocusOn(p1), FocusOn(p2), FocusOn(p3), FocusOn(p4), FocusOn(p5), FocusOn(p6), FocusOn(p7), FocusOn(p8), FocusOn(p9))
+        self.wait()
+
+        self.play(FadeOut(a_group, shift=LEFT), FadeOut(b_group, shift=LEFT), FadeOut(a_graph), FadeOut(b_graph), FadeOut(p1), FadeOut(p2), FadeOut(p3), FadeOut(p4), FadeOut(p5), FadeOut(p6), FadeOut(p7), FadeOut(p8), FadeOut(p9), FadeOut(number_plane))
+
         self.wait(2)
 
         title = Tex(r"Bézout's Theorem", font_size=48)
@@ -576,7 +619,7 @@ class Some4(Scene):
         fe.align_to(c, LEFT)
         self.play(Write(fe))
         self.wait(2)
-        fet = Tex(r"$$S_3(x,y)=Q_2(x,y)T_1(x,y)$$", font_size=30).shift(3 * LEFT + -0.5 * UP)
+        fet = Tex(r"$$S_3(x,y)=R_2(x,y)T_1(x,y)$$", font_size=30).shift(3 * LEFT + -0.5 * UP)
         fet.align_to(c, LEFT)
         self.play(Write(fet))
         self.wait(2)
