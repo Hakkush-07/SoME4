@@ -1,6 +1,5 @@
 # SoME4
 
-My #SoME4 submission.
+My #SoME4 submission. [Video](https://youtu.be/OVIerQjGa2M)
 
-Video here soon: https://www.youtube.com/@davshancik/videos
-
+[![alt](https://img.youtube.com/vi/OVIerQjGa2M/0.jpg)](https://www.youtube.com/watch?v=OVIerQjGa2M)
