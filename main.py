@@ -1,7 +1,7 @@
 from manim import *
 from math import sin, cos, pi
 from manim_voiceover import VoiceoverScene
-from manim_voiceover.services.elevenlabs import ElevenLabsService
+from manim_voiceover.services.recorder import RecorderService
 
 def extension(p1, p2, p3, p4):
     x1, y1 = p1.get_x(), p1.get_y()
@@ -14,7 +14,7 @@ def extension(p1, p2, p3, p4):
 
 class Some4(VoiceoverScene):
     def construct(self):
-        self.set_speech_service(ElevenLabsService())
+        self.set_speech_service(RecorderService())
 
         # settings
         Line.set_default(stroke_width=0.9)
@@ -424,6 +424,7 @@ class Some4(VoiceoverScene):
         # intersection of curves
         with self.voiceover(text="An interesting question about curves is to count the number of intersections.") as tracker:
             self.play(FadeIn(number_plane))
+        self.wait(1)
         with self.voiceover(text="For example, take two lines,") as tracker:
             self.wait(2)
 
@@ -673,7 +674,7 @@ class Some4(VoiceoverScene):
         cd = Tex(r"$$\mathcal{C}\cap\mathcal{D}=\{A,B,C,D,E,F,X,Y,Z\}$$", font_size=30).shift(3 * LEFT + 1.5 * UP)
         with self.voiceover(text="The points that are on both curves are A, B, C, D, E, F, X, Y, Z. ") as tracker:
             self.play(Write(cd))
-        with self.voiceover(text="There are nine of those, consistent with what the Bezout's theorem tell us.") as tracker:
+        with self.voiceover(text="There are nine of those, consistent with what the Bezout's theorem tells us.") as tracker:
             self.wait(2)
         self.play(Unwrite(cd))
         self.wait(1)
