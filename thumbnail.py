@@ -71,7 +71,7 @@ class Some4Thumbnail(Scene):
         pascal.scale(1.2).shift(0.5 * DOWN)
         self.add(pascal)
 
-        pascal_text = Text("Pascal's Theorem", font_size=60)
+        pascal_text = Text("Pascal's Theorem", font_size=120)
         pascal_text.shift(3 * UP)
         self.add(pascal_text)
     
